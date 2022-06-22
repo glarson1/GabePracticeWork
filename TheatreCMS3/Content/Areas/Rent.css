@@ -1,0 +1,324 @@
+﻿/* ▼ This ▼ is for you to easily reference the colors on the Site.css page */
+/* Do not uncomment these color variables */
+
+/* CSS color variables */
+/*:root {*/ /* Color palette for css */
+/*--main-color: #DB1A11;*/ /* Red */
+/*--main-color--light: #F04D44;*/ /* Red, a shade lighter */
+/*--secondary-color: #D6972A;*/ /* Yellow gold */
+/*--light-color: #FFFBFB;*/ /* White */
+/*--dark-color: #000000;*/ /* Black */
+/*--secondary-color--dark: #9D7C39;*/ /* Dark Gold */
+/*--light-blue: rgb(93, 123, 244)*/ /*Light Blue - Added color on top of original*/
+/*}*/
+
+
+
+/* ----- Rentals Photo Edit/Create Styling ----- */
+.RentalPhoto-EditCreate--H2 {
+    font-family: 'Oswald';
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.RentalPhoto-EditCreate--Titles {
+    font-family: 'Oswald';
+    font-size: 22px;
+}
+
+.RentalPhoto-EditCreate--HR {
+    max-width: 2.5em;
+    margin-top: 0;
+    border-top: .3em solid var(--main-color);
+    color: var(--main-color);
+}
+
+.RentalPhoto-EditCreate--Form:focus {
+    border-color: var(--main-color);
+    box-shadow: var(--main-color) 0 1px 1px inset;
+}
+
+.RentalPhoto-EditCreate--Form {
+    background-color: #b6b6b6;
+}
+
+.RentalPhoto-EditCreate--CreateSaveBtn {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    font-family: 'Oswald';
+}
+
+.RentalPhoto-EditCreate--CreateSaveBtn:hover {
+    background-color: var(--secondary-color--dark);
+}
+
+.RentalPhoto-EditCreate--BackBtn {
+    background-color: var(--main-color);
+    color: var(--light-color);
+    font-family: 'Oswald';
+}
+
+.RentalPhoto-EditCreate--BackBtn:hover {
+    background-color: var(--main-color--light);
+}
+
+.RentalPhoto-Index--Body {
+    font-family: 'Oswald';
+}
+
+.RentalPhoto-Index--Header {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+.RentalPhoto-Index--CreateBtn {
+    background-color: var(--main-color);
+    color: var(--light-color);
+    font-family: 'Oswald';
+}
+
+    .RentalPhoto-Index--CreateBtn:hover {
+        background-color: var(--main-color--light);
+    }
+
+.RentalPhoto-Index--Card {
+    background: black;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+
+    .RentalPhoto-Index--Card:hover .RentalPhoto-Index--CardImg {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+        opacity: 0.5;
+    }
+
+    .RentalPhoto-Index--Card:hover .RentalPhoto-Index--CardFooter {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+    .RentalPhoto-Index--Card:hover .RentalPhoto-Index--CardText {
+        transform: scale(1.3);
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+.RentalPhoto-Index--CardImg {
+    border-radius: 8px;
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.RentalPhoto-Index--CardText {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.RentalPhoto-Index--CardFooter {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    text-align: center;
+    z-index: 99;
+    opacity: 0;
+}
+
+.RentalPhoto-Index--Link {
+    color: var(--main-color--light);
+}
+
+    .RentalPhoto-Index--Link:hover {
+        color: var(--main-color);
+    }
+/* ----- End Rentals Photo Styling ----- */
+
+/* ------ Rental Items Styling -------*/
+
+.RentalItem-Create-heading3 
+{
+    color: var(--light-color);
+    text-align: center;
+}
+
+#RentalItem-Create-formContainer 
+{
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: var(--main-color);
+    color: var(--dark-color);
+    margin: auto;
+    text-align: center;
+}
+
+#RentalItem-Create-formContainer input[type=text] 
+{
+    width: 100%;
+    padding: 3%;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background: var(--dark-color);
+    font-size: 1vw;
+    text-align: center;
+    margin-left: 10%;
+}
+
+#RentalItem-Create-formContainer input[type=datetime] 
+{
+    width: 100%;
+    padding: 3%;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background: var(--dark-color);
+    font-size: 1vw;
+    text-align: center;
+    margin-left: 10%;
+}
+
+#RentalItem-Create-formContainer input:focus 
+{
+    border: 1px solid var(--light-color);
+}
+
+#RentalItem-Create-createbtn 
+{
+    background: var(--main-color);
+    color: var(--dark-color);
+    border-radius: 40px;
+    border: 5px solid var(--light-color);
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin: auto;
+}
+
+#RentalItem-Create-createbtn:hover 
+{
+    background: var(--main-color);
+    border: 5px solid var(--secondary-color);
+}
+
+#RentalItem-Create-btnText 
+{
+    color: var(--dark-color);
+}
+
+#RentalItem-Create-btnText:hover
+{
+    color: var(--secondary-color);
+}
+
+.RentalItem-Create-BackToList
+{
+    background: var(--dark-color);
+    border-radius: 40px;
+    border: 5px solid var(--light-color);
+    width: 84%;
+    height: 40px;
+    position: relative;
+    color: var(--light-color);
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+}
+
+.RentalItem-Create-BackToList:hover 
+{
+    background: var(--light-color);
+    border: 5px solid var(--dark-color);
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.RentalItem-Edit-heading3 
+{
+    color: var(--dark-color);
+    text-align: center;
+}
+
+#RentalItem-Edit-editForm 
+{
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: var(--main-color);
+    color: var(--dark-color);
+    margin: auto;
+    text-align: center;
+}
+
+#RentalItem-Edit-editForm input[type=text] 
+{
+    width: 100%;
+    padding: 3%;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background: var(--secondary-color--dark);
+    font-size: 1vw;
+    text-align: center;
+    margin-left: 10%;
+}
+
+#RentalItem-Edit-editForm input[type=datetime] 
+{
+    width: 100%;
+    padding: 3%;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background: var(--secondary-color--dark);
+    font-size: 1vw;
+    text-align: center;
+    margin-left: 10%;
+}
+
+#RentalItem-Edit-editForm input:focus 
+{
+    border: 1px solid var(--dark-color);
+}
+
+#RentalItem-Edit-savebtn 
+{
+    background: var(--main-color);
+    color: var(--dark-color);
+    border-radius: 40px;
+    border: 5px solid var(--dark-color);
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin: auto;
+}
+
+#RentalItem-Edit-savebtn:hover 
+{
+    background: var(--secondary-color--dark);
+    border: 5px solid var(--light-color);
+}
+
+.RentalItem-Edit-BackToList 
+{
+    background: var(--dark-color);
+    border-radius: 40px;
+    border: 5px solid var(--light-color);
+    width: 84%;
+    height: 40px;
+    position: relative;
+    color: var(--light-color);
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+}
+
+.RentalItem-Edit-BackToList:hover 
+{
+    background: var(--light-color);
+    border: 5px solid var(--dark-color);
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+/* ------ End Rental Items Styling -------*/
