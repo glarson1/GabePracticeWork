@@ -15,5 +15,7 @@ namespace TheatreCMS3.Areas.Blog.Models
 
 
         public virtual List<BlogPost>BlogPosts { get; set; }
+
+        public virtual BlogPhoto AuthorPhoto { get; set; }
     }
 }
