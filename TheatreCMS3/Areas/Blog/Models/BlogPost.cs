@@ -10,6 +10,8 @@ namespace TheatreCMS3.Areas.Blog.Models
         public int BlogPostId { get; set; }
         public string Content { get; set; }
         public DateTime Posted { get; set; }
-        public string Author { get; set; }
+
+
+        public virtual BlogAuthor Author { get; set; }
     }
 }

@@ -12,5 +12,8 @@ namespace TheatreCMS3.Areas.Blog.Models
         public string Bio { get; set; }
         public DateTime Joined { get; set; }
         public DateTime? Left { get; set; }
+
+
+        public virtual List<BlogPost>BlogPosts { get; set; }
     }
 }
