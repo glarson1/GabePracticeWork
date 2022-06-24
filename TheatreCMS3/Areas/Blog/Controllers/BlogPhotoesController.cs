@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -47,10 +48,12 @@ namespace TheatreCMS3.Areas.Blog.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BlogPhotoId,Title,Photo")] BlogPhoto blogPhoto)
+        public ActionResult Create([Bind(Include = "BlogPhotoId,Title,Photo")] BlogPhoto blogPhoto, HttpPostedFileBase BlogPhotoFile)
         {
             if (ModelState.IsValid)
             {
+                blogPhoto.Photo = ConvertImage(BlogPhotoFile);
+
                 db.BlogPhotos.Add(blogPhoto);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -123,6 +126,17 @@ namespace TheatreCMS3.Areas.Blog.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public byte[] ConvertImage(HttpPostedFileBase BlogPhotoFile)
+        {
+            byte[] bytes;
+            using (BinaryReader br = new BinaryReader(BlogPhotoFile.InputStream))
+            {
+                bytes = br.ReadBytes(BlogPhotoFile.ContentLength);
+            }
+
+            return bytes;
         }
     }
 }
