@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using TheatreCMS3.Areas.Blog.Models;
 using TheatreCMS3.Models;
 
+
 namespace TheatreCMS3.Areas.Blog.Controllers
 {
     public class BlogAuthorsController : Controller
@@ -47,10 +48,15 @@ namespace TheatreCMS3.Areas.Blog.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BlogAuthorId,Name,Bio,Joined,Left")] BlogAuthor blogAuthor)
+        public ActionResult Create([Bind(Include = "BlogAuthorId,Name,Bio,Joined,Left")] BlogAuthor blogAuthor, HttpPostedFileBase BlogPhotoFile)
         {
             if (ModelState.IsValid)
             {
+               BlogPhotoesController().ConvertImage(BlogPhotoFile);
+                
+
+               
+                blogAuthor.AuthorPhoto.Photo = result;
                 db.BlogAuthors.Add(blogAuthor);
                 db.SaveChanges();
                 return RedirectToAction("Index");

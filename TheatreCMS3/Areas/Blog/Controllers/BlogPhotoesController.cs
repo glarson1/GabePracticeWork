@@ -128,15 +128,18 @@ namespace TheatreCMS3.Areas.Blog.Controllers
             base.Dispose(disposing);
         }
 
-        public byte[] ConvertImage(HttpPostedFileBase BlogPhotoFile)
+        public static byte[] ConvertImage(HttpPostedFileBase BlogPhotoFile)
         {
             byte[] bytes;
             using (BinaryReader br = new BinaryReader(BlogPhotoFile.InputStream))
             {
                 bytes = br.ReadBytes(BlogPhotoFile.ContentLength);
+
             }
 
             return bytes;
         }
+
+        
     }
 }

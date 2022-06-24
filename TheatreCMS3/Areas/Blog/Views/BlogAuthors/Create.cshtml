@@ -8,7 +8,7 @@
 <h2>Create Blog Author</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "BlogAuthors", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -31,6 +31,12 @@
       @Html.ValidationMessageFor(model => model.Bio, "", new { @class = "text-danger" })
     </div>
   </div>
+  @Html.EditorFor(model => model.AuthorPhoto.BlogPhotoId)
+
+  @Html.EditorFor(model => model.AuthorPhoto.Title)
+
+  @Html.TextBoxFor(model => model.AuthorPhoto.Photo, new { @type = "file", @Name = "BlogPhotoFile" })
+  
 
   <div class="blog_author-create--joined_left_container">
     <div>
