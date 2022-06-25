@@ -48,15 +48,11 @@ namespace TheatreCMS3.Areas.Blog.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BlogAuthorId,Name,Bio,Joined,Left")] BlogAuthor blogAuthor, HttpPostedFileBase BlogPhotoFile)
+        public ActionResult Create([Bind(Include = "BlogAuthorId,Name,Bio,Joined,Left,BlogPosts,AuthorPhoto")] BlogAuthor blogAuthor, HttpPostedFileBase BlogPhotoFile)
         {
             if (ModelState.IsValid)
             {
-               BlogPhotoesController().ConvertImage(BlogPhotoFile);
-                
-
-               
-                blogAuthor.AuthorPhoto.Photo = result;
+                blogAuthor.AuthorPhoto.Photo = BlogPhotoesController.ConvertImage(BlogPhotoFile);
                 db.BlogAuthors.Add(blogAuthor);
                 db.SaveChanges();
                 return RedirectToAction("Index");
