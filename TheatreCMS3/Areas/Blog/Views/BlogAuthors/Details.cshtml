@@ -1,5 +1,5 @@
 ﻿@model TheatreCMS3.Areas.Blog.Models.BlogAuthor
-
+@using TheatreCMS3.Areas.Blog.Models
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,44 +8,100 @@
 <h2>Details</h2>
 
 <div>
-    <h4>BlogAuthor</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+  <div class="BlogAuthor-Details--NavContainer">
+    <p class="btn BlogAuthor-Details--Nav" id="Details">Author Details</p>
+    <p class="btn BlogAuthor-Details--Nav" id="BlogPosts">Blog Posts</p>
+    <p class="btn BlogAuthor-Details--Nav" id="Contact">Contact</p>  
+    <p class="btn BlogAuthor-Details--Nav" id="Twitter">Twitter</p>
+  </div>
+  <div class="card mb-3" style="max-width: 540em;">
+    <div class="row no-gutters">
+      
+      <div class="col-md-4">
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+        @if (Model.AuthorPhoto.Photo != null)
+        {
+          string text = Convert.ToBase64String(Model.AuthorPhoto.Photo);
+          <img src="data:image/jpeg;base64,@text" alt="...">
+        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Bio)
-        </dt>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title BlogAuthor-Details--CardName"></h5>
+          <p class="card-text BlogAuthor-Details--Bio">@Html.DisplayFor(model => model.Bio)</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.Bio)
-        </dd>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <p class="card-text BlogAuthor-Details--JoinedLeft">Joined Date</p>
+              </div>
+              <div class="col">
+                <p class="card-text BlogAuthor-Details--JoinedLeft">Left Date</p>
+              </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Joined)
-        </dt>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <p class="card-text BlogAuthor-Details--JoinedLeft"> @Html.DisplayFor(model => model.Joined)</p>
+              </div>
+              <div class="col">
+                <p class="card-text BlogAuthor-Details--JoinedLeft"> @Html.DisplayFor(model => model.Left)</p>
+              </div>
+            </div>
+            <div class="BlogAuthor-Details--JoinedLeftContainer">
+              <p class="card-text BlogAuthor-Details--Joined">Joined Date</p>
+              <p class="card-text">Left Date</p>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Joined)
-        </dd>
+          </div>
+        </div>
+      </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Left)
-        </dt>
+      @*html for BlogPosts section*@
+     
+      <div class="col-md-8" id="BlogAuthor-Details--BlogPosts">
+        <div class="card-body">
+          <h5 class="card-title BlogAuthor-Details--CardName">@Html.DisplayFor(model => model.Name)</h5>
+          <p class="card-text BlogAuthor-Details--Bio">@Html.DisplayFor(model => model.Bio)</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.Left)
-        </dd>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <p class="card-text BlogAuthor-Details--JoinedLeft">Joined Date</p>
+              </div>
+              <div class="col">
+                <p class="card-text BlogAuthor-Details--JoinedLeft">Left Date</p>
+              </div>
+            </div>
 
-    </dl>
-</div>
-<p>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <p class="card-text BlogAuthor-Details--JoinedLeft"> @Html.DisplayNameFor(model => model.BlogPosts)</p>
+              </div>
+              <div class="col">
+                <p class="card-text BlogAuthor-Details--JoinedLeft"> @Html.DisplayFor(model => model.Left)</p>
+              </div>
+            </div>
+            <div class="BlogAuthor-Details--JoinedLeftContainer">
+              <p class="card-text BlogAuthor-Details--Joined">Joined Date</p>
+              <p class="card-text">Left Date</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+  <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.BlogAuthorId }) |
     @Html.ActionLink("Back to List", "Index")
-</p>
+  </p>

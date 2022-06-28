@@ -77,4 +77,32 @@
     border-radius: 0.25rem;
     margin: 0 7.5px 30px 7.5px;
 }
+
+.BlogAuthor-Details--CardName {
+    color:black;
+}
+
+.BlogAuthor-Details--Bio {
+    color:black;
+}
+
+.BlogAuthor-Details--JoinedLeft {
+    color: black;
+}
+
+.BlogAuthor-Details--Nav {
+    background-color: var(--light-color);
+    margin-right: 1em;
+}
+
+.BlogAuthor-Details--NavContainer {
+    background-color: red;
+    padding-top: 1em;
+    text-align: right;
+    margin-left: 40em;
+}
+
+#BlogAuthor-Details--AuthorDetails{
+    display:none;
+}
 /*End of BlogAuthor styling*/
